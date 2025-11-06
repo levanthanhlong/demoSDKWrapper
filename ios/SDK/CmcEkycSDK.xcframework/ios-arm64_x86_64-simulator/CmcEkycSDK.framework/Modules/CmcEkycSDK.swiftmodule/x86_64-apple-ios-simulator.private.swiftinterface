@@ -1,0 +1,32 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target x86_64-apple-ios13-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CmcEkycSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+@_exported import CmcEkycSDK
+import Foundation
+import KalapaSDK
+import ObjectMapper
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_hasMissingDesignatedInitializers @objcMembers public class CmcEkycResult : ObjectiveC.NSObject {
+  @objc public var frontResult: [Swift.String : Any]?
+  @objc public var backResult: [Swift.String : Any]?
+  @objc public var decision: Swift.String?
+  @objc public var decisionDetails: [[Swift.String : Any]]?
+  @objc public var session: Swift.String?
+  @objc public var nfcData: [Swift.String : Any]?
+  @objc public var qrCodeData: [Swift.String : Any]?
+  @objc public var mrz: Swift.String?
+  @objc public var rawJson: [Swift.String : Any]
+  @objc public func toDictionary() -> [Swift.String : Any]
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class CmcEkycManager : ObjectiveC.NSObject {
+  @objc public static let shared: CmcEkycSDK.CmcEkycManager
+  @objc public func startEkyc(from viewController: UIKit.UIViewController, session: Swift.String, baseUrl: Swift.String, language: Swift.String = "vi", mainColor: Swift.String = "#6CB096", btnTextColor: Swift.String = "#FFFFFF", backgroundColor: Swift.String = "#FFFFFF", isAnimatedBtn: Swift.Bool = true, cornerRadiusBtn: CoreFoundation.CGFloat = 10, flowType: Swift.Int32 = 1, mrz: Swift.String? = nil, faceData: Swift.String? = nil, onResult: ((CmcEkycSDK.CmcEkycResult?) -> Swift.Void)? = nil, onEvent: ((Swift.String) -> Swift.Void)? = nil, onShowLoading: (() -> Swift.Void)? = nil, onHideLoading: (() -> Swift.Void)? = nil, onShowError: ((Swift.String?, UIKit.UIViewController) -> Swift.Void)? = nil, onTimeoutScanNFC: (((() -> Swift.Void)?) -> Swift.Void)? = nil) async
+  @objc public func fieldToDictionary(_ field: KalapaSDK.Field?) -> [Swift.String : Any]?
+  @objc deinit
+}
